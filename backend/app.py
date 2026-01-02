@@ -22,13 +22,13 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'your-secret-key-here')
 
 CORS(app, 
-     resources={r"/api/*": {"origins": ["http://localhost:3000", "http://172.20.10.7:3000"]}, 
-                r"/socket.io/*": {"origins": ["http://localhost:3000", "http://172.20.10.7:3000"]}},
+     resources={r"/api/*": {"origins": ["http://localhost:3000", "http://172.20.8.77:3000"]}, 
+                r"/socket.io/*": {"origins": ["http://localhost:3000", "http://172.20.8.77:3000"]}},
      supports_credentials=True)
 
 socketio = SocketIO(
     app,
-    cors_allowed_origins=["http://localhost:3000", "http://172.20.10.7:3000"],
+    cors_allowed_origins=["http://localhost:3000", "http://172.20.8.77:3000"],
     ping_timeout=60,
     ping_interval=25,
     max_http_buffer_size=1e8,
